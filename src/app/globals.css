@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Base Theme - Light Mode Playful */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #FDFBF7;
+    --foreground: #000000;
+    --muted: #EEEEEE;
+    --muted-foreground: #666666;
+    --border: #E2E2E2;
+    --accent: #EFEFEF;
+    --accent-foreground: #111111;
+    
+    /* Vibrant Accents */
+    --brand: #FF4F00;      /* Vibrant Orange */
+    --brand-muted: #FF4F0033;
+    --bento-yellow: #FFD23F;
+    --bento-blue: #3A86FF;
+    --bento-pink: #FF006E;
+    --bento-green: #06D6A0;
   }
 }
 
+/* Utilities */
+.text-brand { color: var(--brand); }
+.bg-brand { background-color: var(--brand); }
+.border-brand { border-color: var(--brand); }
+
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  /* Brutalist Dot Pattern */
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 20px 20px;
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Brutalist Utilities */
+@layer utilities {
+  .border-brutalist {
+    @apply border-4 border-black;
+  }
+  
+  .shadow-brutalist {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .shadow-brutalist-sm {
+    @apply shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .shadow-brutalist-lg {
+    @apply shadow-[12px_12px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .hover-brutalist {
+    @apply hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 active:translate-x-[8px] active:translate-y-[8px] active:shadow-none;
+  }
+
+  .hover-brutalist-sm {
+    @apply hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Make headings bold and playful */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
