@@ -26,8 +26,9 @@ export interface Project {
   shot_at?: string;
   
   // Media
-  cover_image: ProjectImage;
-  gallery_images: ProjectImage[];
+  cover_image_url?: string;
+  cover_image?: ProjectImage;
+  gallery_images?: ProjectImage[];
   
   // Meta
   is_featured: boolean;
