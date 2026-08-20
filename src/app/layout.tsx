@@ -15,9 +15,6 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Abdee Alfarizi — Design & Photography",
   description: "Graphic designer & photographer — brand identity, editorial, dan fotografi",
-  icons: {
-    icon: "/ppp.png",
-  },
 };
 
 export default function RootLayout({
