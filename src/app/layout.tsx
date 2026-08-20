@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Abdee Alfarizi — Design & Photography",
+  title: "Abdee Alfarizi| Design & Photography",
   description: "Graphic designer & photographer — brand identity, editorial, dan fotografi",
 };
 
